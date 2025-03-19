@@ -26,8 +26,14 @@ class Stack {
 }
     // Обчислення добутку непарних елементів стеку
    productelements() {
+    var acc = 1;
+    for (var i = 0; i < this.items.length; i++) {
+      if (this.items[i] % 2 !== 0) {
+        acc *= this.items[i];
+      }
+    }
     return this.items
-    .filter(num => num % 2 !== 0)
+    .filter(number => number % 2 !== 0)
     .reduce((product, number) => product * number, 1);
 }
 }
